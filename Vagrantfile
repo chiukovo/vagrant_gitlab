@@ -13,7 +13,9 @@ Vagrant.configure(2) do |config|
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
   config.vm.box = "ubuntu/trusty64"
-  config.vm.hostname = "gitlab-server.com"
+
+  #要改成大家能連的host name 這樣才能使用
+  config.vm.hostname = "your-host-name.com"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -23,12 +25,20 @@ Vagrant.configure(2) do |config|
   # Create a forwarded port mapping which allows access to a specific port
   # within the machine from a port on the host machine. In the example below,
   # accessing "localhost:8080" will access port 80 on the guest machine.
+
+  #此設定vm的80 port 會對應 本機的8080 port (localhost:8080)
   config.vm.network "forwarded_port", guest: 80, host: 8080
+  #此設定vm的22 port 會對應 本機的8022 port (use ssh)
   config.vm.network "forwarded_port", guest: 22, host: 8022
 
   # Create a private network, which allows host-only access to the machine
   # using a specific IP.
+
+  #只有本機能進入
   config.vm.network "private_network", ip: "33.33.33.33"
+
+  #對應本機的資料夾
+  config.vm.synced_folder ".", "/vagrant"
 
   # Create a public network, which generally matched to bridged network.
   # Bridged networks make the machine appear as another physical device on
