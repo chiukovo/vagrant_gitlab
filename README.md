@@ -7,18 +7,18 @@
 
 ## or use command install
 1. Installing Virtualbox
-`sudo apt-get install virtualbox`
-`sudo apt-get install virtualbox-dkms`
+  `sudo apt-get install virtualbox`
+  `sudo apt-get install virtualbox-dkms`
 
 2. Installing vagrant
 
-下載vagrant
+  下載vagrant
 
-[Vagrant 1.9.1](https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.deb)
+  [Vagrant 1.9.1](https://releases.hashicorp.com/vagrant/1.9.1/vagrant_1.9.1_x86_64.deb)
 
-cd 到下載的目錄
+  cd 到下載的目錄
 
-run `dpkg -i vagrant_1.9.1_x86_64.deb`
+  run `dpkg -i vagrant_1.9.1_x86_64.deb`
 
 This will create a ubuntu virtual machine with gitlab running. By default, web port forwards to `8080` and ssh port forwards to `8022`. You can change that in [Vagrantfile](Vagrantfile#L26~L27).
 
