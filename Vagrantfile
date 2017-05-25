@@ -84,10 +84,10 @@ Vagrant.configure(2) do |config|
     debconf-set-selections <<< "postfix postfix/mailname string $HOSTNAME"
     debconf-set-selections <<< "postfix postfix/main_mailer_type string 'Internet Site'"
     DEBIAN_FRONTEND=noninteractive sudo apt-get install -y postfix
-    if [ ! -e /vagrant/gitlab_7.7.2-omnibus.5.4.2.ci-1_amd64.deb ]; then
-        wget -O /vagrant/gitlab_7.7.2-omnibus.5.4.2.ci-1_amd64.deb https://downloads-packages.s3.amazonaws.com/ubuntu-14.04/gitlab_7.7.2-omnibus.5.4.2.ci-1_amd64.deb
-    fi
-    sudo dpkg -i /vagrant/gitlab_7.7.2-omnibus.5.4.2.ci-1_amd64.deb
+
+    curl -sS https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash
+    sudo apt-get install gitlab-ce
+
     sudo gitlab-ctl reconfigure
   SHELL
 end
