@@ -8,13 +8,17 @@
 ## version example
 
 1. ex: version 8.14.2
+
   `curl -s https://packages.gitlab.com/install/repositories/gitlab/gitlab-ce/script.deb.sh | sudo bash`
+
   `sudo apt-get install gitlab-ce=8.14.2-ce.0`
 
 
 ## or use command install
 1. Installing Virtualbox
+
   `sudo apt-get install virtualbox`
+
   `sudo apt-get install virtualbox-dkms`
 
 2. Installing vagrant
